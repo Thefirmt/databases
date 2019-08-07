@@ -3,12 +3,31 @@ CREATE DATABASE chat;
 USE chat;
 
 CREATE TABLE messages (
-  /* Describe your table here.*/
+  /* auto increment id*/
+  id int primary key not null auto_increment,
+  /*message*/
+  message,
+  /*created by*/
+  createdBy,
+  /*room id foreign key*/
+  room_id,
+  /*user id foreign key*/
+  user_id
 );
 
-/* Create other tables and define schemas for them here! */
+CREATE TABLE users {
+	/* auto increment id*/
+	id int primary key not null auto_increment,
+	username varchar(60)
+}
 
+CREATE TABLE rooms {
+	id int primary key not null auto_increment,
+	roomname varchar(100)
+}
 
+/*add foreign keys appropriately alter table foreign key references*/
+/*insert into rooms, users, messages*/
 
 
 /*  Execute this file from the command line by typing:
