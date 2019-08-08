@@ -4,7 +4,10 @@ var models = require('../models');
 module.exports = {
   messages: {
     get: (req, res) => {
-      res.send('breath of the wild');
+      models.messages.get((data)=> {
+        console.log(data);
+        res.send(data);
+      });
       // model.get('data', (req, res) => {
       //   res.send();
       // })
@@ -13,8 +16,9 @@ module.exports = {
       // req(data) => {
       // models.post(data) => {
       // }
-      // console.log(req);
-      models.messages.post(req);
+      var data = req.body;
+      console.log(data);
+      models.messages.post(data);
       res.send('breath of the wild');
     } // a  which hand =>les posting a message to the database
   },
@@ -25,7 +29,6 @@ module.exports = {
 
     get: (req, res) => {},
     post: (req, res) => {
-      // console.log(req);
       var data = req.body;
       models.users.post(data);
       res.send('breath of the wild');
