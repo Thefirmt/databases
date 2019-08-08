@@ -26,8 +26,8 @@ module.exports = {
     get: (req, res) => {},
     post: (req, res) => {
       // console.log(req);
-      var a = req.body;
-      models.users.post(a);
+      var data = req.body;
+      models.users.post(data);
       res.send('breath of the wild');
     }
   }

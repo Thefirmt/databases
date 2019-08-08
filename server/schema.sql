@@ -10,15 +10,19 @@ CREATE TABLE messages (
   /*created by*/
   created_on datetime(1),
   /*room id foreign key*/
-  room_id int,
+  -- room_id int,
+  roomname varchar(100),
   /*user id foreign key*/
-  user_id int
+  -- user_id int,
+  username varchar(100)
+  -- FOREIGN KEY (room_id) REFERENCES rooms(id),
+  -- FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE users (
 	/* auto increment id*/
 	id int primary key not null auto_increment,
-	username varchar(60),
+	username varchar(60)
   -- post_count int
 );
 
@@ -29,8 +33,6 @@ CREATE TABLE rooms (
 
 /*add foreign keys appropriately alter table foreign key references*/
 /*insert into rooms, users, messages*/
--- FOREIGN KEY (room_id) REFERENCES rooms(id),
-  -- FOREIGN KEY (user_id) REFERENCES users(id)
 
 /*  Execute this file from the command line by typing:
  *    mysql -u root < server/schema.sql
