@@ -11,7 +11,7 @@ module.exports = {
     }, // a  which hand =>les a get request for all messages
     post: (req, res) => {
       // req(data) => {
-        // models.post(data) => {
+      // models.post(data) => {
       // }
       // console.log(req);
       models.messages.post(req);
